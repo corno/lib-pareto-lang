@@ -1,0 +1,30 @@
+{
+  "author": "Corno",
+  "bin": {},
+  "dependencies": {
+    "lib-astn-expect": "^0.0.0",
+    "api-astn-handlers": "^0.0.0",
+    "lib-fountain-pen": "^0.0.0",
+    "pareto-core-lib": "^0.4.0"
+  },
+  "files": [
+    "dist",
+    "data"
+  ],
+  "keywords": [],
+  "main": "./dist/index.js",
+  "bugs": {
+    "url": "https://github.com/corno/pareto/issues"
+  },
+  "description": "",
+  "homepage": "https://github.com/corno/pareto#readme",
+  "license": "ISC",
+  "name": "lib-pareto-lang",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corno/lib-pareto-lang.git"
+  },
+  "types": "dist/index.d.ts",
+  "version": "0.19.0",
+  "content-fingerprint": "dad59cc9e9ba498582405255641698935988d70e"
+}

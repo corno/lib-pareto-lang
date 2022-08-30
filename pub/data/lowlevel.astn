@@ -1,0 +1,483 @@
+! "mrshl/schemaschema@0.1"
+< {
+    "type": < {
+        "type": < 'state group' "string" {
+            "string": < { } >
+            "number": < { } >
+            "boolean": < { } >
+            "type argument": < {
+                "argument": < 'value' "*type argument*" 'text' >
+            } >
+            "type reference": < {
+                "type": < 'component' "type reference" >
+            } >
+            "tagged union": < {
+                "options": < 'collection' {
+                    "name": <'value' "" 'text' >
+                    "type": < 'component' "type" >
+                } 'dictionary' "name" >
+            } >
+            "group": < {
+                "properties": < 'collection' {
+                    "name": <'value' "" 'text' >
+                    "type": < 'component' "type" >
+                } 'dictionary' "name" >
+            } >
+            "dictionary": < {
+                "entry": < 'component' "type" >
+            } >
+            "list": < {
+                "element": < 'component' "type" >
+            } >
+        } >
+        "occurence": < 'state group' "required" {
+            "required": < { } >
+            "optional": < { } >
+        } >
+    } >
+    "namespace selection": < {
+        "which": < 'state group' "current" {
+            "current": < { } >
+            "other": < {
+                "namespace reference": < 'component' "namespace reference" >
+            } >
+        } >
+    } >
+    "namespace reference": < {
+        "namespace": < 'value' "*namespace*" 'text' >
+        "type arguments": < 'collection' {
+            "name": <'value' "" 'text' >
+            "type": < 'value' "*type argument type*" 'text' >
+        } 'dictionary' "name" >
+    }>
+    "type reference": < {
+        "namespace selection": < 'component' "namespace selection" >
+        "type": < 'value' "*type reference*" 'text' >
+    }>
+    "interface definition": < {
+        "type": < 'state group' "group" {
+            "dictionary": < {
+                "entry": < 'component' "interface definition" >
+            } >
+            "group": < {
+                "members": < 'collection' {
+                    "name": <'value' "" 'text' >
+                    "definition": < 'component' "interface definition">
+                } 'dictionary' "name" >
+            } >
+            "method": < {
+                "type": < 'component' "type reference" >
+                "return type": < 'state group' "void" {
+                    "void": < { } >
+                    "interface": < {
+                        "interface": < 'component' "interface definition" >
+                    } >
+                } >
+            } >
+            "reference": < {
+                "namespace selection": < 'component' "namespace selection" >
+                "interface": < 'value' "*referenced interface*" 'text' >
+            } >
+        } >
+    } >
+    "function declaration": < {
+        "in": < 'component' "type reference" >
+        "out": < 'component' "type reference" >
+    } >
+    "builder procedure declaration": < {
+        "return type": < 'state group' "void" {
+            "void": < { } >
+            "interface": < {
+                "interface": < 'component' "interface definition" >
+            } >
+        } >
+        "interfaces": < 'collection' {
+            "name": <'value' "" 'text' >   
+            "interface": < 'component' "interface definition" >
+        } 'dictionary' "name" >
+    } >
+    //START OF IMPLEMENTATION TYPES
+    "string expression": < {
+        "strategy": < 'state group' "literal" {
+            "literal": < {
+                "value": < 'value' "" 'text' >
+            } >
+            "state": < {
+                "state": < 'value' "*state*" 'text'>
+            } >
+            "select": < {
+                "context": < 'component' "context selection" >
+            } >
+        } > 
+    } >
+    "context start": < { 
+        "start": < 'state group' "context" {
+            "context": < {
+            } >
+            "marked value": < {
+                "marker": < 'value' "*marker*" 'text' >
+            } >
+            "function": < {
+                "context": < 'state group' "argument" {
+                    "local function": < {
+                        "function": < 'value' "*function*" 'text'>
+                    } >
+                    "argument": < {
+                        "function": < 'value' "*function*" 'text'>
+                    } >
+                    // "from marked": < {
+                    //     "marker": < 'value' "*marker*" 'text' >
+                    // } >
+                } >
+                "argument": < 'component' "type expression">
+            } >
+            "state": < {
+                "state": < 'value' "*state*" 'text'>
+            } >
+        } >
+    } >
+    "missing handler": < {
+        "guaranteed": < 'state group' "yes" {
+            "yes": < { } >
+            "no": < {
+                "on missing": < 'component' "type expression" >
+            } >
+        } >
+    } >
+    "guaranteed context selection": < {
+        "start": < 'component' "context start" >
+        "steps": < 'collection' {
+            "missing handler": < 'component' "missing handler" >
+            "property": < 'value' "*property*" 'text' >
+        } 'list' >
+        "missing handler": < 'component' "missing handler" >
+    } >
+    "context selection": < {
+        "start": < 'component' "context start" >
+        "steps": < 'collection' {
+            "property": < 'value' "*property*" 'text' >
+        } 'list' >
+    } >
+    "type expression": < {
+        "strategy": < 'state group' "literal" {
+            "dictionary from state": < {
+                "state": < 'value' "*state*" 'text'>
+            } >
+            "copy": < {
+                "context": < 'component' "guaranteed context selection" >
+            } >
+            "literal": < {
+                "type": < 'state group' "string" {
+                    "string": < {
+                        "value": < 'value' "" 'text' >
+                    } >
+                    "number": < {
+                        "value": < 'value' "0" 'text' >
+                    } >
+                    "boolean": < {
+                        "value": < 'value' "true" 'text' >
+                    } >
+                    "tagged union": < {
+                        "option": < 'value' "*option*" 'text' >
+                        "data": < 'component' "type expression" >
+                    } >
+                    "dictionary": < {
+                    } >
+                    "list": < {
+                    } >
+                    "group": < {
+                        "properties": < 'collection' {
+                            "name": <'value' "" 'text' >
+                            "expression": < 'component' "type expression" >
+                        } 'dictionary' "name" >
+                    } >
+                    "type argument": < {
+                    } >
+                    "type reference": < {
+                        "expression": < 'component' "type expression" >
+                    } >
+                } >
+            } >
+            "map": < {
+                "context": < 'component' "guaranteed context selection" >
+                "entry": < 'component' "type expression" >
+            } >
+            "switch": < {
+                "context": < 'component' "guaranteed context selection" >
+                "options": < 'collection' {
+                    "name": <'value' "" 'text' >
+                    "expression": < 'component' "type expression" >
+                } 'dictionary' "name">
+            } >
+        } >
+    } >
+    "internal procedure specification": < {
+        "return type": < 'state group' "void" {
+            "void": < { } >
+            "interface": < {
+                "interface": < 'component' "interface definition" >
+            } >
+        } >
+        "parameters": < 'collection' {
+            "name": <'value' "" 'text' >
+            "type": < 'state group' "group" {
+                "group": < {
+                    "members": < 'collection' {
+                        "name": <'value' "" 'text' >
+                        "definition": < 'component' "interface definition">
+                    } 'dictionary' "name" >
+                } >
+                "method": < {
+                    "type": < 'component' "nested type reference" >
+                    "return type": < 'state group' "void" {
+                        "void": < { } >
+                        "interface": < {
+                            "interface": < 'component' "interface definition" >
+                        } >
+                    } >
+                } >
+                "reference": < {
+                    "namespace selection": < 'component' "namespace selection" >
+                    "interface": < 'value' "*referenced interface*" 'text' >
+                } >
+            } >
+        } 'dictionary' "name" >
+        "block": < 'component' "procedure block" >
+    } >
+    "interface expression": < {
+        "type": < 'state group' "initialize" {
+            "argument": < {
+                "argument": < 'value' "*argument*" 'text' >
+            } >
+            "initialize": < {
+                "type": < 'state group' "method" {
+                    "dictionary": < {
+                        "entries": < 'collection' {
+                            "name": <'value' "" 'text' >
+                            "expression": < 'component' "interface expression" >
+                        } 'dictionary' "name" >
+                    } >
+                    "method": < {
+                        "strategy": < 'state group' "procedure implementation" {
+                            "argument": < {
+                                "argument": < 'value' "*argument*" 'text' >
+                            } >
+                            "procedure implementation": < {
+                                "block": < 'component' "procedure block" >
+                            } >
+                            "inline procedure": < {
+                                "specification": < 'component' "internal procedure specification" >
+                                "call": < 'component' "procedure call" >
+                            } >
+                        } >
+                    } >
+                    "group": < {
+                        "strategy": < 'state group' "inline" {
+                            "inline": < {
+                                "members": < 'collection' {
+                                    "name": <'value' "" 'text' >
+                                    "expression": < 'component' "interface expression" >
+                                } 'dictionary' "name" >
+                            } >
+                        } >
+                    } >
+                    "reference": < {
+                        "strategy": < 'state group' "procedure call6" {
+                            "procedure call6": < {
+                                "procedure call": < 'component' "named procedure call" >
+                            } >
+                        } >
+                    } >
+                }>
+            } >
+        } >
+    } >
+    "procedure call": < {
+        "interface arguments": < 'collection' {
+            "name": <'value' "" 'text' >
+            "expression": < 'component' "interface expression" >
+        } 'dictionary' "name" >
+        // "builder arguments": < 'collection' {
+        //     "name": <'value' "" 'text' >
+        //     "argument": < 'value' "*argument*" 'text' >
+        // } 'dictionary' "name" >
+    } >
+    "named procedure call": < {
+        "type": < 'state group' "local" {
+            "local": < {
+                "procedure": < 'value' "*procedure*" 'text' >
+            } >
+            "external": < {
+                "builder": < 'value' "*builder*" 'text' >
+                "method": < 'value' "*method*" 'text' >
+            } >
+        } >
+        "procedure call": < 'component' "procedure call" >
+    } >
+    "nested type reference": < {
+        "namespace reference": < 'component' "namespace reference" >
+        "type": < 'value' "*type reference*" 'text' >
+        "steps": < 'collection' {
+            "type": < 'state group' "dictionary" {
+                "group": < {
+                    "property": < 'value' "*property*" 'text' >
+                } >
+                "dictionary": < {
+                } >
+                "list": < {
+                } >
+                "tagged union option": < {
+                    "option": < 'value' "*option*" 'text' >
+                } >
+            } >
+        } 'list'>
+    } >
+    "procedure block": < {
+        "nested procedures": < 'collection' {
+            "name": <'value' "" 'text' >
+            "specification": < 'component' "internal procedure specification" >
+        } 'dictionary' "name" >
+        "markers": < 'collection' {
+            "name": <'value' "" 'text' >
+            "selection": < 'component' "context selection" >
+        } 'dictionary' "name" >
+        "states": < 'collection' {
+            "name": <'value' "" 'text' >
+            "type": < 'state group' "string" {
+                "string": < {
+                    "initial value": < 'value' "" 'text' >
+                } >
+                "dictionary": < {
+                    "type": < 'component' "nested type reference">
+                } >
+                "list": < {
+                    "type": < 'component' "nested type reference">
+                } >
+                "type5": < {
+                    "nested type": < 'component' "nested type reference" >
+                    "expression": < 'component' "type expression" >
+                } >
+            } >
+        } 'dictionary' "name" >
+        "effects": < 'collection' {
+            "type": < 'state group' "external interface call" {
+                "internal interface call": < {
+                    "interface": < 'value' "*interface*" 'text' >
+                    "expression": < 'component' "type expression" >
+                } >
+                "external interface call": < {
+                    "interface": < 'value' "*interface*" 'text' >
+                    "expression": < 'component' "type expression" >
+                } >
+                "state change": < {
+                    "state": < 'value' "*state*" 'text' >
+                    "type": < 'state group' "string" {
+                        "type4": < {
+                            "expression": < 'component' "type expression" >
+                        } >
+                        "string": < {
+                            "initializer": < 'component' "string expression" >
+                        } >
+                        "dictionary": < {
+                            "strategy": < 'state group' "add entry" {
+                                "add entry": < {
+                                    "key": < 'component' "string expression">
+                                    "expression": < 'component' "type expression">
+                                } >
+                            } >
+                        } >
+                        "list": < {
+                            "strategy": < 'state group' "add element" {
+                                "add element": < {
+                                    "expression": < 'component' "type expression">
+                                } >
+                            } >
+                        } >
+                    } >
+                } >
+            } >
+        } 'list' >
+        "return value": < 'state group' "void" {
+            "void": < { } >
+            "interface": < {
+                "expression": < 'component' "interface expression" >
+            } >
+        } >
+    } >
+    "type expression block": < {
+        "functions": < 'collection' {
+            "name": <'value' "" 'text' >
+            "declaration": < 'component' "function declaration" >
+            "block": < 'component' "type expression block">
+        } 'dictionary' "name" >
+        "expression": < 'component' "type expression" >
+    } >
+    "root": < {
+        "namespaces": < 'collection' {
+            "name": <'value' "" 'text' >
+            "type parameters": < 'collection' {
+                "name": <'value' "" 'text' >
+            } 'dictionary' "name" >
+            "types": < 'collection' {
+                "name": <'value' "" 'text' >
+                "type": < 'component' "type" >
+            } 'dictionary' "name" >
+            "interfaces": < 'collection' {
+                "name": <'value' "" 'text' >
+                "definition": < 'component' "interface definition" >
+            } 'dictionary' "name" >
+            "function declarations": < 'collection' {
+                "name": <'value' "" 'text' >
+                "declaration": < 'component' "function declaration" >
+            } 'dictionary' "name" >
+            "interface builders": < 'collection' {
+                "name": <'value' "" 'text' >
+                "methods": < 'collection' {
+                    "name": <'value' "" 'text' >
+                    "declaration": < 'component' "builder procedure declaration" >
+                } 'dictionary' "name" >
+            } 'dictionary' "name" >
+            "procedure declarations": < 'collection' {
+                "name": <'value' "" 'text' >
+                "context": < 'component' "type reference" >
+                "return type": < 'state group' "void" {
+                    "void": < { } >
+                    "interface": < {
+                        "interface": < 'component' "interface definition" >
+                    } >
+                } >
+                "interfaces": < 'collection' {
+                    "name": <'value' "" 'text' >   
+                    "interface": < 'component' "interface definition" >
+                } 'dictionary' "name" >
+                "builders": < 'collection' {
+                    "name": <'value' "" 'text' >
+                    "namespace selection": < 'component' "namespace selection">
+                    "builder": < 'value' "*referenced builder*" 'text' >
+                } 'dictionary' "name" >
+                "functions": < 'collection' {
+                    "name": <'value' "" 'text' >
+                    "declaration": < 'component' "function declaration">
+                } 'dictionary' "name" >
+            } 'dictionary' "name" >
+        } 'dictionary' "name" >
+        "function implementations": < 'collection' {
+            "name": <'value' "" 'text' >
+            "type parameters": < 'collection' {
+                "name": <'value' "" 'text' >
+            } 'dictionary' "name" >
+            "namespace reference": < 'component' "namespace reference" >
+            "declaration": < 'value' "*function declaration*" 'text' >
+            "block": < 'component' "type expression block" >
+        } 'dictionary' "name" >
+        "procedure implementations": < 'collection' {
+            "name": <'value' "" 'text' >
+            "type parameters": < 'collection' {
+                "name": <'value' "" 'text' >
+            } 'dictionary' "name" >
+            "namespace reference": < 'component' "namespace reference" >
+            "declaration": < 'value' "*procedure declaration*" 'text' >
+            "block": < 'component' "procedure block" >
+        } 'dictionary' "name" >
+    } >
+} "root" >
