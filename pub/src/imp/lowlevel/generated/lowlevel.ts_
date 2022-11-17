@@ -1805,7 +1805,7 @@ export function build_fi($c: build_root_T): core_root_T {
     function buildDefault_builder_procedure_declaration_fi {
         return {
             "interfaces": {},
-            "return type": ["void", {}],
+            "return type": ["void", null],
         }
     }
 
@@ -1820,7 +1820,7 @@ export function build_fi($c: build_root_T): core_root_T {
 
     function buildDefault_context_start_fi {
         return {
-            "start": ["context", {}],
+            "start": ["context", null],
         }
     }
 
@@ -1930,13 +1930,13 @@ export function build_fi($c: build_root_T): core_root_T {
                 const FOO = buildDefault_procedure_block_fi("")
             })()FIXME COPY,
             "parameters": {},
-            "return type": ["void", {}],
+            "return type": ["void", null],
         }
     }
 
     function buildDefault_missing_handler_fi {
         return {
-            "guaranteed": ["yes", {}],
+            "guaranteed": ["yes", null],
         }
     }
 
@@ -1963,7 +1963,7 @@ export function build_fi($c: build_root_T): core_root_T {
 
     function buildDefault_namespace_selection_fi {
         return {
-            "which": ["current", {}],
+            "which": ["current", null],
         }
     }
 
@@ -1982,7 +1982,7 @@ export function build_fi($c: build_root_T): core_root_T {
             "effects": [],
             "markers": {},
             "nested procedures": {},
-            "return value": ["void", {}],
+            "return value": ["void", null],
             "states": {},
         }
     }
@@ -2014,8 +2014,8 @@ export function build_fi($c: build_root_T): core_root_T {
 
     function buildDefault_type_fi {
         return {
-            "occurence": ["required", {}],
-            "type": ["string", {}],
+            "occurence": ["required", null],
+            "type": ["string", null],
         }
     }
 
@@ -2113,7 +2113,7 @@ export function build_fi($c: build_root_T): core_root_T {
             },
             "return type": ((): build_builder_procedure_declaration_G_return_type_P => {
                 if ($c === undefined) {
-                    return ["void", {}]
+                    return ["void", null]
                 }
                 const FOO = $c
             })()switch ($c[0]) {
@@ -2152,7 +2152,7 @@ export function build_fi($c: build_root_T): core_root_T {
         return {
             "start": ((): build_context_start_G_start_P => {
                 if ($c === undefined) {
-                    return ["context", {}]
+                    return ["context", null]
                 }
                 const FOO = $c
             })()switch ($c[0]) {
@@ -2377,7 +2377,7 @@ export function build_fi($c: build_root_T): core_root_T {
             },
             "return type": ((): build_internal_procedure_specification_G_return_type_P => {
                 if ($c === undefined) {
-                    return ["void", {}]
+                    return ["void", null]
                 }
                 const FOO = $c
             })()switch ($c[0]) {
@@ -2400,7 +2400,7 @@ export function build_fi($c: build_root_T): core_root_T {
         return {
             "guaranteed": ((): build_missing_handler_G_guaranteed_P => {
                 if ($c === undefined) {
-                    return ["yes", {}]
+                    return ["yes", null]
                 }
                 const FOO = $c
             })()switch ($c[0]) {
@@ -2471,7 +2471,7 @@ export function build_fi($c: build_root_T): core_root_T {
         return {
             "which": ((): build_namespace_selection_G_which_P => {
                 if ($c === undefined) {
-                    return ["current", {}]
+                    return ["current", null]
                 }
                 const FOO = $c
             })()switch ($c[0]) {
@@ -2500,7 +2500,7 @@ export function build_fi($c: build_root_T): core_root_T {
             })()FIXMEMAP{
                 "type": ((): build_nested_type_reference_G_steps_P_D_G_type_P => {
                     if ($c === undefined) {
-                        return ["dictionary", {}]
+                        return ["dictionary", null]
                     }
                     const FOO = $c
                 })()switch ($c[0]) {
@@ -2587,7 +2587,7 @@ export function build_fi($c: build_root_T): core_root_T {
             },
             "return value": ((): build_procedure_block_G_return_value_P => {
                 if ($c === undefined) {
-                    return ["void", {}]
+                    return ["void", null]
                 }
                 const FOO = $c
             })()switch ($c[0]) {
@@ -2735,7 +2735,7 @@ export function build_fi($c: build_root_T): core_root_T {
                     },
                     "return type": ((): build_root_G_namespaces_P_D_G_procedure_declarations_P_D_G_return_type_P => {
                         if ($c === undefined) {
-                            return ["void", {}]
+                            return ["void", null]
                         }
                         const FOO = $c
                     })()switch ($c[0]) {
@@ -2820,7 +2820,7 @@ export function build_fi($c: build_root_T): core_root_T {
         return {
             "occurence": ((): build_type_G_occurence_P => {
                 if ($c === undefined) {
-                    return ["required", {}]
+                    return ["required", null]
                 }
                 const FOO = $c
             })()switch ($c[0]) {
@@ -2838,7 +2838,7 @@ export function build_fi($c: build_root_T): core_root_T {
             },
             "type": ((): build_type_G_type_P => {
                 if ($c === undefined) {
-                    return ["string", {}]
+                    return ["string", null]
                 }
                 const FOO = $c
             })()switch ($c[0]) {
@@ -3046,7 +3046,7 @@ export function createDeserializer_pi<NonTokenAnnotation, TokenAnnotation>(
             "out": ($: core_builder_procedure_declaration) => void
         }): deserialize_api_ValueHandler_I<NonTokenAnnotation, TokenAnnotation> {
             const interfaces_s: { [key: string]: core_builder_procedure_declaration_G_interfaces_P_D } = {}
-            let return_type_s: core_builder_procedure_declaration_G_return_type_P = ["void", {}]
+            let return_type_s: core_builder_procedure_declaration_G_return_type_P = ["void", null]
             return $b.context.expectVerboseGroup({
                 "onEnd": ($c) => {
                     $ip.out({
@@ -3206,7 +3206,7 @@ export function createDeserializer_pi<NonTokenAnnotation, TokenAnnotation>(
             "out": ($: core_context_selection) => void
         }): deserialize_api_ValueHandler_I<NonTokenAnnotation, TokenAnnotation> {
             let start_s: core_context_selection = {
-                "start": ["context", {}],
+                "start": ["context", null],
             }
             const steps_s: core_context_selection_G_steps_P_L[] = []
             return $b.context.expectVerboseGroup({
@@ -3248,7 +3248,7 @@ export function createDeserializer_pi<NonTokenAnnotation, TokenAnnotation>(
         function temp_NIC($ip: {
             "out": ($: core_context_start) => void
         }): deserialize_api_ValueHandler_I<NonTokenAnnotation, TokenAnnotation> {
-            let start_s: core_context_start_G_start_P = ["context", {}]
+            let start_s: core_context_start_G_start_P = ["context", null]
             return $b.context.expectVerboseGroup({
                 "onEnd": ($c) => {
                     $ip.out({
@@ -3604,10 +3604,10 @@ export function createDeserializer_pi<NonTokenAnnotation, TokenAnnotation>(
             "out": ($: core_guaranteed_context_selection) => void
         }): deserialize_api_ValueHandler_I<NonTokenAnnotation, TokenAnnotation> {
             let missing_handler_s: core_guaranteed_context_selection = {
-                "guaranteed": ["yes", {}],
+                "guaranteed": ["yes", null],
             }
             let start_s: core_guaranteed_context_selection = {
-                "start": ["context", {}],
+                "start": ["context", null],
             }
             const steps_s: core_guaranteed_context_selection_G_steps_P_L[] = []
             return $b.context.expectVerboseGroup({
@@ -3808,7 +3808,7 @@ export function createDeserializer_pi<NonTokenAnnotation, TokenAnnotation>(
                                                         function temp_NIC($ip: {
                                                             "out": ($: core_interface_definition_G_type_P_TU_method_O) => void
                                                         }): deserialize_api_ValueHandler_I<NonTokenAnnotation, TokenAnnotation> {
-                                                            let return_type_s: core_interface_definition_G_type_P_TU_method_O_G_return_type_P = ["void", {}]
+                                                            let return_type_s: core_interface_definition_G_type_P_TU_method_O_G_return_type_P = ["void", null]
                                                             let type_s: core_interface_definition = {
                                                                 "namespace selection": "FIXME COMP",
                                                                 "type": "*type reference*",
@@ -3932,7 +3932,7 @@ export function createDeserializer_pi<NonTokenAnnotation, TokenAnnotation>(
                                                         }): deserialize_api_ValueHandler_I<NonTokenAnnotation, TokenAnnotation> {
                                                             let interface_s = "*referenced interface*"
                                                             let namespace_selection_s: core_interface_definition = {
-                                                                "which": ["current", {}],
+                                                                "which": ["current", null],
                                                             }
                                                             return $b.context.expectVerboseGroup({
                                                                 "onEnd": ($c) => {
@@ -4400,7 +4400,7 @@ export function createDeserializer_pi<NonTokenAnnotation, TokenAnnotation>(
                                                                                                                                                             let specification_s: core_interface_expression = {
                                                                                                                                                                 "block": "FIXME COMP",
                                                                                                                                                                 "parameters": {},
-                                                                                                                                                                "return type": ["void", {}],
+                                                                                                                                                                "return type": ["void", null],
                                                                                                                                                             }
                                                                                                                                                             return $b.context.expectVerboseGroup({
                                                                                                                                                                 "onEnd": ($c) => {
@@ -4451,7 +4451,7 @@ export function createDeserializer_pi<NonTokenAnnotation, TokenAnnotation>(
                                                                                                                                                                 "effects": [],
                                                                                                                                                                 "markers": {},
                                                                                                                                                                 "nested procedures": {},
-                                                                                                                                                                "return value": ["void", {}],
+                                                                                                                                                                "return value": ["void", null],
                                                                                                                                                                 "states": {},
                                                                                                                                                             }
                                                                                                                                                             return $b.context.expectVerboseGroup({
@@ -4632,11 +4632,11 @@ export function createDeserializer_pi<NonTokenAnnotation, TokenAnnotation>(
                 "effects": [],
                 "markers": {},
                 "nested procedures": {},
-                "return value": ["void", {}],
+                "return value": ["void", null],
                 "states": {},
             }
             const parameters_s: { [key: string]: core_internal_procedure_specification_G_parameters_P_D } = {}
-            let return_type_s: core_internal_procedure_specification_G_return_type_P = ["void", {}]
+            let return_type_s: core_internal_procedure_specification_G_return_type_P = ["void", null]
             return $b.context.expectVerboseGroup({
                 "onEnd": ($c) => {
                     $ip.out({
@@ -4777,7 +4777,7 @@ export function createDeserializer_pi<NonTokenAnnotation, TokenAnnotation>(
                                                                                                 function temp_NIC($ip: {
                                                                                                     "out": ($: core_internal_procedure_specification_G_parameters_P_D_G_type_P_TU_method_O) => void
                                                                                                 }): deserialize_api_ValueHandler_I<NonTokenAnnotation, TokenAnnotation> {
-                                                                                                    let return_type_s: core_internal_procedure_specification_G_parameters_P_D_G_type_P_TU_method_O_G_return_type_P = ["void", {}]
+                                                                                                    let return_type_s: core_internal_procedure_specification_G_parameters_P_D_G_type_P_TU_method_O_G_return_type_P = ["void", null]
                                                                                                     let type_s: core_internal_procedure_specification = {
                                                                                                         "namespace reference": "FIXME COMP",
                                                                                                         "steps": [],
@@ -4902,7 +4902,7 @@ export function createDeserializer_pi<NonTokenAnnotation, TokenAnnotation>(
                                                                                                 }): deserialize_api_ValueHandler_I<NonTokenAnnotation, TokenAnnotation> {
                                                                                                     let interface_s = "*referenced interface*"
                                                                                                     let namespace_selection_s: core_internal_procedure_specification = {
-                                                                                                        "which": ["current", {}],
+                                                                                                        "which": ["current", null],
                                                                                                     }
                                                                                                     return $b.context.expectVerboseGroup({
                                                                                                         "onEnd": ($c) => {
@@ -5070,7 +5070,7 @@ export function createDeserializer_pi<NonTokenAnnotation, TokenAnnotation>(
         function temp_NIC($ip: {
             "out": ($: core_missing_handler) => void
         }): deserialize_api_ValueHandler_I<NonTokenAnnotation, TokenAnnotation> {
-            let guaranteed_s: core_missing_handler_G_guaranteed_P = ["yes", {}]
+            let guaranteed_s: core_missing_handler_G_guaranteed_P = ["yes", null]
             return $b.context.expectVerboseGroup({
                 "onEnd": ($c) => {
                     $ip.out({
@@ -5438,7 +5438,7 @@ export function createDeserializer_pi<NonTokenAnnotation, TokenAnnotation>(
         function temp_NIC($ip: {
             "out": ($: core_namespace_selection) => void
         }): deserialize_api_ValueHandler_I<NonTokenAnnotation, TokenAnnotation> {
-            let which_s: core_namespace_selection_G_which_P = ["current", {}]
+            let which_s: core_namespace_selection_G_which_P = ["current", null]
             return $b.context.expectVerboseGroup({
                 "onEnd": ($c) => {
                     $ip.out({
@@ -5606,7 +5606,7 @@ export function createDeserializer_pi<NonTokenAnnotation, TokenAnnotation>(
             const effects_s: core_procedure_block_G_effects_P_L[] = []
             const markers_s: { [key: string]: core_procedure_block_G_markers_P_D } = {}
             const nested_procedures_s: { [key: string]: core_procedure_block_G_nested_procedures_P_D } = {}
-            let return_value_s: core_procedure_block_G_return_value_P = ["void", {}]
+            let return_value_s: core_procedure_block_G_return_value_P = ["void", null]
             const states_s: { [key: string]: core_procedure_block_G_states_P_D } = {}
             return $b.context.expectVerboseGroup({
                 "onEnd": ($c) => {
@@ -5697,7 +5697,7 @@ export function createDeserializer_pi<NonTokenAnnotation, TokenAnnotation>(
                                                     let specification_s: core_procedure_block = {
                                                         "block": "FIXME COMP",
                                                         "parameters": {},
-                                                        "return type": ["void", {}],
+                                                        "return type": ["void", null],
                                                     }
                                                     return $b.context.expectVerboseGroup({
                                                         "onEnd": ($c) => {
@@ -6415,7 +6415,7 @@ export function createDeserializer_pi<NonTokenAnnotation, TokenAnnotation>(
                                                                                                                                 }): deserialize_api_ValueHandler_I<NonTokenAnnotation, TokenAnnotation> {
                                                                                                                                     let declaration_s: core_root = {
                                                                                                                                         "interfaces": {},
-                                                                                                                                        "return type": ["void", {}],
+                                                                                                                                        "return type": ["void", null],
                                                                                                                                     }
                                                                                                                                     return $b.context.expectVerboseGroup({
                                                                                                                                         "onEnd": ($c) => {
@@ -6549,7 +6549,7 @@ export function createDeserializer_pi<NonTokenAnnotation, TokenAnnotation>(
                                                                                             }
                                                                                             const functions_s: { [key: string]: core_root_G_namespaces_P_D_G_procedure_declarations_P_D_G_functions_P_D } = {}
                                                                                             const interfaces_s: { [key: string]: core_root_G_namespaces_P_D_G_procedure_declarations_P_D_G_interfaces_P_D } = {}
-                                                                                            let return_type_s: core_root_G_namespaces_P_D_G_procedure_declarations_P_D_G_return_type_P = ["void", {}]
+                                                                                            let return_type_s: core_root_G_namespaces_P_D_G_procedure_declarations_P_D_G_return_type_P = ["void", null]
                                                                                             return $b.context.expectVerboseGroup({
                                                                                                 "onEnd": ($c) => {
                                                                                                     $ip.out({
@@ -6580,7 +6580,7 @@ export function createDeserializer_pi<NonTokenAnnotation, TokenAnnotation>(
                                                                                                                                 }): deserialize_api_ValueHandler_I<NonTokenAnnotation, TokenAnnotation> {
                                                                                                                                     let builder_s = "*referenced builder*"
                                                                                                                                     let namespace_selection_s: core_root = {
-                                                                                                                                        "which": ["current", {}],
+                                                                                                                                        "which": ["current", null],
                                                                                                                                     }
                                                                                                                                     return $b.context.expectVerboseGroup({
                                                                                                                                         "onEnd": ($c) => {
@@ -6899,8 +6899,8 @@ export function createDeserializer_pi<NonTokenAnnotation, TokenAnnotation>(
                                                                                             "out": ($: core_root_G_namespaces_P_D_G_types_P_D) => void
                                                                                         }): deserialize_api_ValueHandler_I<NonTokenAnnotation, TokenAnnotation> {
                                                                                             let type_s: core_root = {
-                                                                                                "occurence": ["required", {}],
-                                                                                                "type": ["string", {}],
+                                                                                                "occurence": ["required", null],
+                                                                                                "type": ["string", null],
                                                                                             }
                                                                                             return $b.context.expectVerboseGroup({
                                                                                                 "onEnd": ($c) => {
@@ -6977,7 +6977,7 @@ export function createDeserializer_pi<NonTokenAnnotation, TokenAnnotation>(
                                                         "effects": [],
                                                         "markers": {},
                                                         "nested procedures": {},
-                                                        "return value": ["void", {}],
+                                                        "return value": ["void", null],
                                                         "states": {},
                                                     }
                                                     let declaration_s = "*procedure declaration*"
@@ -7276,8 +7276,8 @@ export function createDeserializer_pi<NonTokenAnnotation, TokenAnnotation>(
         function temp_NIC($ip: {
             "out": ($: core_type) => void
         }): deserialize_api_ValueHandler_I<NonTokenAnnotation, TokenAnnotation> {
-            let occurence_s: core_type_G_occurence_P = ["required", {}]
-            let type_s: core_type_G_type_P = ["string", {}]
+            let occurence_s: core_type_G_occurence_P = ["required", null]
+            let type_s: core_type_G_type_P = ["string", null]
             return $b.context.expectVerboseGroup({
                 "onEnd": ($c) => {
                     $ip.out({
@@ -7392,8 +7392,8 @@ export function createDeserializer_pi<NonTokenAnnotation, TokenAnnotation>(
                                                             "out": ($: core_type_G_type_P_TU_dictionary_O) => void
                                                         }): deserialize_api_ValueHandler_I<NonTokenAnnotation, TokenAnnotation> {
                                                             let entry_s: core_type = {
-                                                                "occurence": ["required", {}],
-                                                                "type": ["string", {}],
+                                                                "occurence": ["required", null],
+                                                                "type": ["string", null],
                                                             }
                                                             return $b.context.expectVerboseGroup({
                                                                 "onEnd": ($c) => {
@@ -7454,8 +7454,8 @@ export function createDeserializer_pi<NonTokenAnnotation, TokenAnnotation>(
                                                                                                     "out": ($: core_type_G_type_P_TU_group_O_G_properties_P_D) => void
                                                                                                 }): deserialize_api_ValueHandler_I<NonTokenAnnotation, TokenAnnotation> {
                                                                                                     let type_s: core_type = {
-                                                                                                        "occurence": ["required", {}],
-                                                                                                        "type": ["string", {}],
+                                                                                                        "occurence": ["required", null],
+                                                                                                        "type": ["string", null],
                                                                                                     }
                                                                                                     return $b.context.expectVerboseGroup({
                                                                                                         "onEnd": ($c) => {
@@ -7517,8 +7517,8 @@ export function createDeserializer_pi<NonTokenAnnotation, TokenAnnotation>(
                                                             "out": ($: core_type_G_type_P_TU_list_O) => void
                                                         }): deserialize_api_ValueHandler_I<NonTokenAnnotation, TokenAnnotation> {
                                                             let element_s: core_type = {
-                                                                "occurence": ["required", {}],
-                                                                "type": ["string", {}],
+                                                                "occurence": ["required", null],
+                                                                "type": ["string", null],
                                                             }
                                                             return $b.context.expectVerboseGroup({
                                                                 "onEnd": ($c) => {
@@ -7633,8 +7633,8 @@ export function createDeserializer_pi<NonTokenAnnotation, TokenAnnotation>(
                                                                                                     "out": ($: core_type_G_type_P_TU_tagged_union_O_G_options_P_D) => void
                                                                                                 }): deserialize_api_ValueHandler_I<NonTokenAnnotation, TokenAnnotation> {
                                                                                                     let type_s: core_type = {
-                                                                                                        "occurence": ["required", {}],
-                                                                                                        "type": ["string", {}],
+                                                                                                        "occurence": ["required", null],
+                                                                                                        "type": ["string", null],
                                                                                                     }
                                                                                                     return $b.context.expectVerboseGroup({
                                                                                                         "onEnd": ($c) => {
@@ -8645,7 +8645,7 @@ export function createDeserializer_pi<NonTokenAnnotation, TokenAnnotation>(
             "out": ($: core_type_reference) => void
         }): deserialize_api_ValueHandler_I<NonTokenAnnotation, TokenAnnotation> {
             let namespace_selection_s: core_type_reference = {
-                "which": ["current", {}],
+                "which": ["current", null],
             }
             let type_s = "*type reference*"
             return $b.context.expectVerboseGroup({
