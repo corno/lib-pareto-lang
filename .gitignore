@@ -2,9 +2,9 @@
 /dev/node_modules/
 /pub/dist/
 /pub/node_modules/
-/pub/src/generated/
 /pareto/node_modules/
+/pareto/scripts/
 /test/dist/
 /test/node_modules/
-/test/src/generated/
 /tmp
+/package.json
