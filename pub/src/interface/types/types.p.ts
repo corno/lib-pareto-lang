@@ -1,12 +1,4 @@
 
-/*eslint
-    "@typescript-eslint/no-unused-vars": 0,
-    "camelcase": 0,
-    "dot-notation": 0,
-    "no-underscore-dangle": 0,
-    "quote-props": 0,
-    "max-len": 0
-*/
 import * as pt from "pareto-core-types"
 
 export type __interfaces_T = {

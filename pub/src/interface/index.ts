@@ -7,4 +7,4 @@
 // export * from "./types/ExpectedValue"
 // export * from "./types/expect"
 
-export * from "./types/types"
+export * from "./types/types.p"

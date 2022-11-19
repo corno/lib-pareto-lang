@@ -1,4 +1,4 @@
-import * as fp from "fountain-pen-lib"
+import * as fp from "lib-fountain-pen"
 
 export function createFile(
     indentation: string,
