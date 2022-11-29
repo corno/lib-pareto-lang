@@ -4,7 +4,10 @@
   "dependencies": {
     "api-astn-handlers": "^0.3.0",
     "lib-fountain-pen": "^0.6.1",
-    "pareto-core": "^0.0.4"
+    "pareto-core": "^0.0.5",
+    "pareto-core-lib": "^0.17.0",
+    "pareto-core-raw": "^0.7.0",
+    "pareto-core-state": "^0.12.0"
   },
   "files": [
     "dist",
@@ -26,5 +29,5 @@
   "types": "dist/index.d.ts",
   "version": "0.19.0",
   "interface-fingerprint": "5fafc5be6657849a22ea0fc3b23c917c7a7a158e",
-  "content-fingerprint": "80b94a6523c9c62194ab181c62ae12e9aed09941"
+  "content-fingerprint": "f9a9351bb4f21e03d3d57773de415976251ffa14"
 }
