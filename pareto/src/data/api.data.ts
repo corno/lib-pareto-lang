@@ -23,7 +23,7 @@ export const $: mmoduleDefinition.TModuleDefinition = {
     'glossary': glossary,
     'api': {
         'imports': d({
-            "common": "glo-pareto-common",s
+            //"common": "glo-pareto-common",
         }),
         'algorithms': d({
         })

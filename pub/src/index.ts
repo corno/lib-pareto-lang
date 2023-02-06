@@ -1,2 +1,2 @@
-export * from "./imp"
-export * from "./interface"
+export { $a } from "./main"
+export * from "./main"
