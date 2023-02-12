@@ -1,5 +1,5 @@
 
-import * as pt from "pareto-core-types"
+import * as pt from 'pareto-core-types'
 
 export type __interfaces_T = {
     readonly "interface": __interface_definition_T

@@ -14,13 +14,12 @@ import * as mglossary from "lib-pareto-typescript-project/dist/submodules/glossa
 
 const d = pr.wrapRawDictionary
 
-export const $: mglossary.TGlossary = {
+export const $: mglossary.T.Glossary<string> = {
     'imports': d({
         "common": "glo-pareto-common",
     }),
     'parameters': d({}),
-    'templates': d({}),
-    'types': types({
+    'types': d({
     }),
     'interfaces': d({
     }),

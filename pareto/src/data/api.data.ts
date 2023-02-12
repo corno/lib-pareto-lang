@@ -19,7 +19,7 @@ import { $ as glossary } from "./glossary.data"
 
 const d = pr.wrapRawDictionary
 
-export const $: mmoduleDefinition.TModuleDefinition = {
+export const $: mmoduleDefinition.T.ModuleDefinition = {
     'glossary': glossary,
     'api': {
         'imports': d({

@@ -2,8 +2,8 @@
 //     "dot-notation": off,
 //     "@typescript-eslint/no-unused-vars": off,
 // */
-// import * as pt from "pareto-core-types"
-// import * as pl from "pareto-core-lib"
+// import * as pt from 'pareto-core-types'
+// import * as pl from 'pareto-core-lib'
 // import * as ll from "../generated/types"
 // import * as fp from "fountain-pen-lib"
 
