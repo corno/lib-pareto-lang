@@ -1,39 +1,7 @@
-// /*eslint
-//     "dot-notation": off,
-//     "@typescript-eslint/no-unused-vars": off,
-// */
 // import * as pt from 'pareto-core-types'
 // import * as pl from 'pareto-core-lib'
 // import * as ll from "../generated/types"
 // import * as fp from "fountain-pen-lib"
-
-// function doDictionary<T>(
-//     dict: pt.Dictionary<T>,
-//     onEmpty: () => void,
-//     onBegin: () => void,
-//     onEnd: () => void,
-//     onEntry: ($: T, key: string) => void,
-//     onSeparator: () => void,
-// ) {
-//     let isEmpty = true
-//     let isFirst = true
-//     dict.forEach(() => false, ($x, key) => {
-//         const $ = $x
-//         if (isFirst) {
-//             onBegin()
-//         } else {
-//             onSeparator()
-//         }
-//         onEntry($, key)
-//         isEmpty = false
-//         isFirst = false
-//     })
-//     if (isEmpty) {
-//         onEmpty()
-//     } else {
-//         onEnd()
-//     }
-// }
 
 // function findImp<T>(
 //     dict: pt.Dictionary<T>,
@@ -1328,36 +1296,6 @@
 //         })
 //         $w.snippet(`}`)
 //     }
-//     $w.line({}, ($w) => {
-//         $w.snippet(`/* eslint`)
-//         $w.indent({}, ($w) => {
-//             $w.line({}, ($w) => {
-//                 $w.snippet(`"camelcase": 0,`)
-//             })
-//             $w.line({}, ($w) => {
-//                 $w.snippet(`"dot-notation": 0,`)
-//             })
-//             $w.line({}, ($w) => {
-//                 $w.snippet(`"no-underscore-dangle": 0,`)
-//             })
-//             $w.line({}, ($w) => {
-//                 $w.snippet(`"max-len": 0,`)
-//             })
-//             $w.line({}, ($w) => {
-//                 $w.snippet(`"@typescript-eslint/ban-types": 0,`)
-//             })
-//             $w.line({}, ($w) => {
-//                 $w.snippet(`"@typescript-eslint/no-empty-function": 0,`)
-//             })
-//             $w.line({}, ($w) => {
-//                 $w.snippet(`"@typescript-eslint/no-empty-interface": 0,`)
-//             })
-//             $w.line({}, ($w) => {
-//                 $w.snippet(`"@typescript-eslint/no-unused-vars": 0,`)
-//             })
-//         })
-//         $w.snippet(`*/`)
-//     })
 //     $w.line({}, ($w) => { })
 //     $w.line({}, ($w) => {
 //         $w.snippet(`interface pa.Dictionary<T> {`)
