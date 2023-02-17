@@ -1,4 +1,4 @@
-import * as pr from 'pareto-core-raw'
+import * as pd from 'pareto-core-data'
 
 import {
     null_,
@@ -12,7 +12,7 @@ import {
 
 import * as mglossary from "lib-pareto-typescript-project/dist/submodules/glossary"
 
-const d = pr.wrapRawDictionary
+const d = pd.wrapRawDictionary
 
 export const $: mglossary.T.Glossary<string> = {
     'imports': d({
