@@ -4,11 +4,9 @@ import {
     null_,
     array,
     string,
-    reference,
     boolean,
-    nested,
     typeReference,
-    dictionary, group, member, taggedUnion, types, func, data
+    dictionary, group, member, taggedUnion, data
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import { definitionReference, constructor, algorithm } from "lib-pareto-typescript-project/dist/submodules/moduleDefinition/shorthands"

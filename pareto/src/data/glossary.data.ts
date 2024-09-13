@@ -4,10 +4,9 @@ import {
     null_,
     array,
     string,
-    reference,
     boolean,
     typeReference,
-    dictionary, group, member, taggedUnion, types, func, data, interfaceReference, inf, method
+    dictionary, group, member, taggedUnion, data
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as mglossary from "lib-pareto-typescript-project/dist/submodules/glossary"
